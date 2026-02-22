@@ -104,7 +104,11 @@ const Navbar = ({ user }) => {
         <img
           src="/logo.jpeg"
           alt="BOXMEOUT Logo"
-          style={{ height: "80px", borderRadius: "10px", boxShadow: "0 0 20px rgba(225, 29, 72, 0.3)" }}
+          style={{
+            height: "80px",
+            borderRadius: "10px",
+            boxShadow: "0 0 20px rgba(225, 29, 72, 0.3)",
+          }}
         />
         <div
           style={{

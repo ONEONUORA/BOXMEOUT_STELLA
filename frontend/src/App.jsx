@@ -49,11 +49,11 @@ function App() {
   // Filter matches based on selected category (if any)
   const filteredMatches = selectedCategory
     ? matches.filter((m) => {
-      if (selectedCategory === "wwe") return m.type === "Wrestling";
-      if (selectedCategory === "boxing") return m.type === "Boxing";
-      if (selectedCategory === "mma") return m.type === "MMA";
-      return true; // Show all for others for now or add more mock data
-    })
+        if (selectedCategory === "wwe") return m.type === "Wrestling";
+        if (selectedCategory === "boxing") return m.type === "Boxing";
+        if (selectedCategory === "mma") return m.type === "MMA";
+        return true; // Show all for others for now or add more mock data
+      })
     : matches;
 
   // Select first match as featured or one that is LIVE
@@ -71,7 +71,7 @@ function App() {
   };
 
   const handleLogin = (email) => {
-    setUser(prev => ({ ...prev, email, username: email.split('@')[0] }));
+    setUser((prev) => ({ ...prev, email, username: email.split("@")[0] }));
     setView("SPORT_SELECT");
   };
 
@@ -200,7 +200,9 @@ function App() {
 
   return (
     <div className="arcade-screen">
-      {view === "LANDING" && <LandingPage onStart={handleStart} onNav={setView} />}
+      {view === "LANDING" && (
+        <LandingPage onStart={handleStart} onNav={setView} />
+      )}
       {view === "SIGN_IN" && <SignIn onSignIn={handleLogin} />}
       {view === "ABOUT" && <AboutUs onNav={setView} />}
       {view === "CONTACT" && <ContactUs onNav={setView} />}
